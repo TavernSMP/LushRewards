@@ -1,0 +1,25 @@
+name: TavernRewards
+version: 3.3.0-beta2
+main: org.lushplugins.lushrewards.LushRewards
+api-version: 1.16
+author: OakLeaf, plugin forked by Pace
+softdepend:
+- floodgate
+- PlaceholderAPI
+folia-supported: true
+commands:
+  rewards:
+    description: Opens Rewards GUI
+    usage: /rewards
+    aliases:
+    - dailyrewards
+permissions:
+  lushrewards.use:
+    description: Allows player to use the LushRewards plugin
+    default: true
+  lushrewards.use.*:
+    description: Allows player to use a specific LushRewards module
+    default: true
+  lushrewards.reload:
+    description: Allows player to reload the LushRewards plugin
+    default: op

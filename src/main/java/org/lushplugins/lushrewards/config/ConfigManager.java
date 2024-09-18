@@ -108,12 +108,6 @@ public class ConfigManager {
             e.printStackTrace();
         }
 
-        boolean enableUpdater = config.getBoolean("enable-updater", true);
-        plugin.getUpdater().setEnabled(enableUpdater);
-        if (enableUpdater) {
-            plugin.getUpdater().queueCheck();
-        }
-
         reloadCategoryMap(config.getConfigurationSection("categories"));
         reloadItemTemplates(config.getConfigurationSection("item-templates"));
         reloadRewardTemplates();

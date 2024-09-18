@@ -25,7 +25,6 @@ dependencies {
     compileOnly("org.geysermc.floodgate:api:${findProperty("floodgateVersion")}-SNAPSHOT")
     compileOnly("me.clip:placeholderapi:${findProperty("placeholderapiVersion")}")
 
-    implementation("org.bstats:bstats-bukkit:${findProperty("bStatsVersion")}")
     implementation("org.enchantedskies:EnchantedStorage:${findProperty("enchantedStorageVersion")}")
     implementation("org.lushplugins:LushLib:${findProperty("lushLibVersion")}")
     implementation("space.arim.morepaperlib:morepaperlib:${findProperty("morePaperLibVersion")}")
@@ -43,7 +42,6 @@ tasks {
     }
 
     shadowJar {
-        relocate("org.bstats", "org.lushplugins.lushrewards.libraries.bstats")
         relocate("org.enchantedskies", "org.lushplugins.lushrewards.libraries.enchantedskies")
         relocate("org.lushplugins.lushlib", "org.lushplugins.lushrewards.libraries.lushlib")
         relocate("space.arim.morepaperlib", "org.lushplugins.lushrewards.libraries.morepaperlib")

@@ -2,7 +2,6 @@ package org.lushplugins.lushrewards;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.bstats.bukkit.Metrics;
 import org.lushplugins.lushlib.module.Module;
 import org.lushplugins.lushrewards.command.RewardsCommand;
 import org.lushplugins.lushrewards.hook.FloodgateHook;
@@ -23,7 +22,6 @@ import org.lushplugins.lushrewards.listener.RewardUserListener;
 import org.bukkit.util.FileUtil;
 import org.lushplugins.lushlib.LushLib;
 import org.lushplugins.lushlib.plugin.SpigotPlugin;
-import org.lushplugins.lushlib.utils.Updater;
 import space.arim.morepaperlib.MorePaperLib;
 
 import java.io.File;
@@ -41,7 +39,6 @@ public final class LushRewards extends SpigotPlugin {
     private DataManager dataManager;
     private NotificationHandler notificationHandler;
     private LocalPlaceholders localPlaceholders;
-    private Updater updater;
 
     static {
         GSON = new GsonBuilder()
@@ -85,7 +82,6 @@ public final class LushRewards extends SpigotPlugin {
             new RewardManager()
         );
 
-        updater = new Updater(this, "djC8I9ui", "lushrewards.update", "rewards update");
         notificationHandler = new NotificationHandler();
         localPlaceholders = new LocalPlaceholders();
 
@@ -114,10 +110,6 @@ public final class LushRewards extends SpigotPlugin {
 
     @Override
     public void onDisable() {
-        if (updater != null) {
-            updater.shutdown();
-            updater = null;
-        }
 
         if (notificationHandler != null) {
             notificationHandler.stopNotificationTask();
@@ -160,10 +152,6 @@ public final class LushRewards extends SpigotPlugin {
 
     public LocalPlaceholders getLocalPlaceholders() {
         return localPlaceholders;
-    }
-
-    public Updater getUpdater() {
-        return updater;
     }
 
     public Gson getGson() {

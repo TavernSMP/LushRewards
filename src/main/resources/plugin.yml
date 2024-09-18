@@ -1,21 +1,18 @@
-name: LushRewards
+name: TavernRewards
 version: ${project.version}
 main: org.lushplugins.lushrewards.LushRewards
 api-version: 1.16
+author: OakLeaf, plugin forked by Pace
 softdepend:
 - floodgate
-- MiniPlaceholders
-- MythicDungeons # Fixes incompatibility caused by this plugin
 - PlaceholderAPI
-- TimedRewards # Fixes incompatibility caused by this plugin
 folia-supported: true
-modrinth-project-id: djC8I9ui
 commands:
   rewards:
     description: Opens Rewards GUI
     usage: /rewards
     aliases:
-    - lushrewards
+    - dailyrewards
 permissions:
   lushrewards.use:
     description: Allows player to use the LushRewards plugin

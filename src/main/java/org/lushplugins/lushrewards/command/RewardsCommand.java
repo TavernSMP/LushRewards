@@ -22,8 +22,6 @@ public class RewardsCommand extends Command {
         addSubCommand(new MessagesSubCommand());
         addSubCommand(new ReloadSubCommand());
         addSubCommand(new SetPlaytimeSubCommand());
-        addSubCommand(new UpdateSubCommand());
-        addSubCommand(new VersionSubCommand());
     }
 
     @Override
